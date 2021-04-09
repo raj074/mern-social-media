@@ -79,3 +79,5 @@ A MERN stack based project on social media application. It is completely working
 ![Explore page](https://drive.google.com/file/d/1hp114it9QA5iMLRljXq62eAEy88cGSwP/view?usp=sharing)
 
 ![Post menu](https://drive.google.com/file/d/1F1ffmdhlylsbzdcWJkdocaCe8knOUIE4/view?usp=sharing)
+![2 home page](https://user-images.githubusercontent.com/72184791/114161176-67e84300-9945-11eb-951e-56dc9164eb59.JPG)
+
