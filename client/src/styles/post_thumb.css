@@ -1,0 +1,50 @@
+.post_thumb{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    justify-content: center;
+    grid-gap: 10px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.post_thumb_display{
+    min-width: 300px;
+    height: 300px;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.post_thumb_display img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post_thumb_display .post_thumb_menu{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: #0008;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.5s;
+    transform: translateY(100%);
+}
+
+.post_thumb_display:hover .post_thumb_menu{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.post_thumb_display .post_thumb_menu i{
+    font-size: 1.5rem;
+    color: white;
+    margin: 0 20px;
+}

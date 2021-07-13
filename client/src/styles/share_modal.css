@@ -1,0 +1,49 @@
+.share_modal{
+      position: fixed;
+  top: 0;
+  left: 0;
+  background: #0008;
+  width: 100%;
+  height: 100vh;
+  z-index: 4;
+  overflow-y: hidden;
+
+}
+
+.share_modal .share_modal-container {
+  max-width: 450px;
+  width: 100%;
+margin: 50px auto;
+  background: white;
+  padding: 20px;
+display: flex;
+  flex-direction: column;
+
+}
+.share_modal .share_modal-header {
+padding-bottom: 10px;
+max-height: 30px;
+border: none;
+border-bottom: 2px solid black;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.share_modal .share_modal-header span:nth-child(1){
+    font-size: 1.2rem;
+} 
+.share_modal .share_modal-header span:nth-child(2){
+    font-size: 2rem;
+    color: var(--c1);
+    cursor: pointer;
+} 
+.share_modal .share_modal-body {
+    
+    width: 100%;
+    margin-top: 10px;
+  display: flex;
+/* grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); */
+justify-content: space-around;
+align-items: center;
+
+}

@@ -1,0 +1,230 @@
+:root{
+  --pink: #fb839e;
+  --violet: #783F8E;
+  --blue: #49275B;
+  --c1: #FD2F24; 
+  --c2: #FF6F01; 
+  --c3: #FED800; 
+  --background-1:linear-gradient(to right, #ffc3a0, #FFAFBD);
+  --background-2:linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b);
+  --background-3:linear-gradient(to right, #fffc00, #ffffff);;
+  --background-4:linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+
+  --outer-shadow: 3px 3px 3px #d0d0d0 ,-3px -3px 3px #f8f8f8;
+  --outer-shadow-0: 0 0 0 #d0d0d0 ,0 0 0 #f8f8f8;
+  --inner-shadow:inset 3px 3px 3px #d0d0d0,inset -3px -3px 3px #f8f8f8;
+  --inner-shadow-0:inset 0 0 0 #d0d0d0 ,inset 0 0 0 #f8f8f8;
+}
+
+
+.outer-shadow{
+    box-shadow: var(--outer-shadow);
+}
+
+.inner-shadow{
+    box-shadow: var(--inner-shadow);
+}
+
+.hover-in-shadow{
+    position: relative;
+    z-index: 1;
+}
+
+.hover-in-shadow:hover{
+    box-shadow: var(--outer-shadow-0);
+}
+
+.hover-in-shadow::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.hover-in-shadow:hover::after{
+    box-shadow: var(--inner-shadow);
+}
+
+.btn-1{
+    padding: 10px 25px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--c1);
+    background-color: transparent;
+    line-height: 1.5;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: none;
+}
+
+.btn-1::after{
+    border-radius: 30px;
+}
+
+
+.color-c1{
+  color: var(--c1);
+}
+.color-c2{
+  color: var(--c2);
+}
+.color-c3{
+  color: var(--c3);
+}
+.color-pink{
+  color: var(--pink);
+}
+.color-violet{
+  color: var(--violet);
+}
+.color-blue{
+  color: var(--blue);
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#theme{
+  display: none;
+}
+
+#theme:checked ~ .App{
+  filter: invert(1);
+}
+
+.App{
+  width: 100%;
+  min-height: 100vh;
+  background: #eff0f4;
+  /* background: #F1F1F1; */
+  /* background: var(--background-3);  */
+
+}
+
+/* ! set main width here */
+.main{
+  max-width: 1400px;
+  width: 100%;
+  margin: auto;
+  height: 100%;
+}
+
+img{
+  object-fit: cover;
+}
+
+
+
+
+
+/* ! AUTH */
+@import url("./auth.css");
+
+/* ! LOADING */
+@import url("./loading.css");
+
+/* ! AVATAR */
+@import url("./avatar.css");
+
+/* ! HEADER */
+@import url("./header.css");
+
+/* ! PROFILE */
+@import url("./profile.css");
+
+/* ! HOME */
+@import url("./home.css");
+
+/* ! status_modal */
+@import url("./status_modal.css");
+
+/* ! Comments */
+@import url("./comments.css");
+
+/* ! profile post thumbs */
+@import url("./post_thumb.css");
+
+/* ! Admin Dashboard */
+@import url("./admin.css");
+
+/* ! Share Modal */
+@import url("./share_modal.css");
+
+/* ! Messages */
+@import url("./message.css");
+
+/* ! Emojis */
+@import url("./icons.css");
+
+.mode{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+
+/* !responsive design */
+
+@media (max-width:768px){
+    .header .menu{
+        position: absolute;
+        top: calc(100vh  - 50px);
+        left: 0;
+        width: 100%;
+        box-shadow:  0 0 10px #ddd;
+        z-index: 2;
+        background: #f8f9fa;
+        height: 50px;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+    }
+
+    .header .menu .navbar-nav{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+    }
+
+    .header .menu .dropdown-menu{
+        bottom: 100%;
+        top: auto;
+    }
+
+    .header .search_form{
+        width: 100%;
+    }
+
+    .header .logo{
+        margin: auto;
+        font-size: 1rem;
+    }
+    .header .logo h1{
+        font-size: 1.5rem;
+    }
+
+    .wrap_page{
+      margin-bottom: 60px;
+    }
+    .message{
+      height: calc(100vh - 150px);
+    }
+}

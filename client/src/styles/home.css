@@ -1,0 +1,102 @@
+/* #region status */
+.status{
+    background-color: transparent;
+    /* box-shadow: 0 0 5px #ddd; */
+    padding: 20px 0;
+    /* border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.125); */
+}
+
+.status .statusBtn{
+    border-radius: 27px;
+    padding: 0 10px;
+    text-align: left;
+    margin: 0 5px;
+    margin-left: 3px;
+    font-size: 1.3rem;
+}
+
+
+
+/* #endregion */
+
+
+/* #region Posts */
+.posts .card{
+    /* box-shadow: 0 0 5px #ddd; */
+}
+
+/* #endregion */
+
+/* #region Post card's header */
+.posts .card_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 15px 25px;
+}
+
+.posts .card_header .card_name{
+    transform: translateY(3px);
+}
+
+.posts .card_header .dropdown-menu{
+    position: absolute;
+    left: inherit !important;
+    right: 0 ;
+
+}
+
+.posts .card_header .dropdown-item{
+    display: flex;
+    margin: 5px 0;
+}
+
+.posts .card_header .dropdown-item:hover{
+    background: var(--pink);
+}
+
+.posts .card_header #moreLink{
+    color: var(--c1);
+}
+
+/* #endregion */
+
+
+/* #region Post card's body */
+.posts .card_body-content{
+    padding: 0 25px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+
+}
+
+.posts .card_body-content .readMore{
+    color: crimson;
+    cursor: pointer;
+}
+
+/* #endregion  */
+
+/* #region Post card's footer */
+.posts .card_icon_menu{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+    cursor: pointer;
+}
+
+.posts .card_icon_menu i{
+    font-size: 28px;
+    margin: 10px;
+}
+
+.posts .card_icon_menu img{
+    width: 28px;
+    height: 28px;
+    transform: translate(5px, 10px);
+    opacity: 0.9;
+}
+/* #endregion  */
+

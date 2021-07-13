@@ -1,0 +1,143 @@
+.status_modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #0008;
+  width: 100%;
+  height: 100vh;
+  z-index: 4;
+  overflow: auto;
+}
+
+.status_modal form {
+  max-width: 450px;
+  width: 100%;
+  border-radius: 5px;
+  background: white;
+  padding: 20px;
+  margin: 30px auto;
+}
+.status_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+   transform: translateY(-15px);
+}
+
+.status_header span {
+  font-size: 2rem;
+  font-weight: 900;
+  cursor: pointer;
+  transform: translateY(-5px);
+}
+
+.status_body textarea{
+    width: 100%;
+    min-height: 150px;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+.status_body .input_images{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.status_body .input_images i{
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.status_body .input_images .file_upload{
+    overflow: hidden;
+    position: relative;
+    margin: 0 10px;
+
+}
+
+.status_body  .file_upload #file{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity:0 ;
+}
+
+
+.status_body .show_images{
+  max-height: 280px;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  place-items: center;
+  grid-gap: 10px;
+}
+
+.status_body .show_images .file_img{
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+}
+
+.status_body .show_images .file_img img,
+.status_body .show_images .file_img video{
+  display: block;
+  object-fit: contain;
+    width: 100%;
+  height: 100%;
+  max-height: 100px;
+}
+
+.status_body .show_images .file_img img:hover{
+  animation: tilting 1s infinite linear;
+}
+
+@keyframes tilting{
+  0%{
+    transform: rotate(0deg);
+  }
+  25%{
+    transform: rotate(-3deg);
+  }
+  50%{
+    transform: rotate(0deg);
+  }
+  75%{
+    transform: rotate(3deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
+
+.status_body .show_images .file_img span{
+  position: absolute;
+  top: -1px;
+  right: -2px;
+  z-index: 4;
+  background: white;
+  color: crimson;
+  padding: 3px 7px;
+  border: 1px solid crimson;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.status_body .stream span{
+  position: absolute;
+  top: -10px;
+  right: 5px;
+  color: crimson;
+  font-size: 2rem;
+  font-weight: 900;
+  cursor: pointer;
+}
