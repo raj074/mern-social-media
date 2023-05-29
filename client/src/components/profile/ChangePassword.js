@@ -1,15 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { GLOBALTYPES } from "../../redux/actions/globalTypes";
 import { changePassword } from "../../redux/actions/authAction";
-
-import { checkImage } from "../../utils/imageUpload";
 
 const ChangePassword = ({ setChangePassword }) => {
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [cnfNewPassword, setCnfNewPassword] = useState("");
-  const { auth, theme } = useSelector((state) => state);
+  const { auth } = useSelector((state) => state);
   const dispatch = useDispatch();
 
 

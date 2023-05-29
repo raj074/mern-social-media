@@ -1,4 +1,5 @@
 const Users = require("../models/userModel");
+const cloudinary = require("../config");
 
 const userCtrl = {
   searchUser: async (req, res) => {
@@ -24,7 +25,6 @@ const userCtrl = {
       if (!user) {
         return res.status(400).json({ msg: "requested user does not exist." });
       }
-
       res.json({ user });
     } catch (err) {
       return res.status(500).json({ msg: err.message });
@@ -33,19 +33,21 @@ const userCtrl = {
 
   updateUser: async (req, res) => {
     try {
-      const {
-        avatar,
-        fullname,
-        mobile,
-        address,
-        story,
-        website,
-        gender,
-      } = req.body;
+      const { avatar, fullname, mobile, address, story, website, gender } =
+        req.body;
       if (!fullname) {
         return res.status(400).json({ msg: "Please add your full name." });
       }
+      const url =
+        "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png";
+      const oldAvatar = (await Users.findOne({ _id: req.user._id })).avatar;
 
+      if (url != oldAvatar) {
+        const parts = oldAvatar.split("/");
+        const identifierWithExtension = parts[parts.length - 1];
+        const public_id = identifierWithExtension.split(".")[0];
+        cloudinary.uploader.destroy(public_id, { resource_type: "image" });
+      }
       await Users.findOneAndUpdate(
         { _id: req.user._id },
         { avatar, fullname, mobile, address, story, website, gender }
@@ -68,13 +70,11 @@ const userCtrl = {
           .status(500)
           .json({ msg: "You are already following this user." });
 
-
-
       const newUser = await Users.findOneAndUpdate(
         { _id: req.params.id },
         {
           $push: {
-            followers: req.user._id
+            followers: req.user._id,
           },
         },
         { new: true }
@@ -94,15 +94,13 @@ const userCtrl = {
 
   unfollow: async (req, res) => {
     try {
-      
-
       const newUser = await Users.findOneAndUpdate(
         { _id: req.params.id },
         {
-          $pull: { followers: req.user._id }
+          $pull: { followers: req.user._id },
         },
         { new: true }
-      ).populate('followers following', '-password');
+      ).populate("followers following", "-password");
 
       await Users.findOneAndUpdate(
         { _id: req.user._id },
@@ -150,9 +148,6 @@ const userCtrl = {
       return res.status(500).json({ msg: err.message });
     }
   },
-
-
-
 };
 
 module.exports = userCtrl;
