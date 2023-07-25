@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { imageShow, videoShow } from "../utils/mediaShow";
 
 const PostThumb = ({ posts, result }) => {
   const { theme } = useSelector((state) => state);

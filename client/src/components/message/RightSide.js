@@ -199,6 +199,7 @@ const RightSide = () => {
             type="text"
             value={text}
             onChange={(e) => setText(e.target.value)}
+            onKeyPress={(e) => e.key === "Enter" && handleSubmit(e)}
             style={{ filter: theme ? "invert(1)" : "invert(0)" , background: theme ? '#040404' : '', color: theme ? 'white' : ''}}
           />
           <Icons setContent={setText} content={text} theme={theme} />
